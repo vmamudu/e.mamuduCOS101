@@ -311,6 +311,26 @@ match input.trim().to_lowercase().as_str() {
     
     _ => println!("Invalid selection. please select one of the shapes listed!"),
     }
+
+    println!("Thanks for using the calculator :3 calculate again? (yes/no)");
+    let mut choice = String::new();
+    io::stdin().read_line(&mut choice).expect("Not a valid input");
+
+    let choice = match choice.trim().to_lowercase().as_str() 
+    {
+        "yes" => true,
+        "no" => false,
+        _ => {
+            println!("Not a valid choice.");
+        false
+        }
+    };
+
+    if choice {
+        loop { 
+            main()
+        }
+    }
 }   
 
     
